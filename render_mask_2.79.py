@@ -2,7 +2,6 @@
 blender renderer based on materials.
 blender version: 2.79.
 load 3d type: obj.
-for single objest.
 """
 import bpy
 import numpy as np
@@ -48,7 +47,6 @@ for object in bpy.context.scene.objects:
     bpy.context.object.modifiers["EdgeSplit"].split_angle = 1.32645
     bpy.ops.object.modifier_apply(apply_as='DATA', modifier="EdgeSplit")
 
-
 bpy.context.scene.render.layers["RenderLayer"].use_pass_material_index = True
 
 
@@ -65,25 +63,12 @@ for i in range(20):
         print("TOTAL MAT NUMBER IS %d NO MORE MAT!" % i)
         break
 mat_name_list.sort()
-# for j in range(len(mat_name_list)):
-#     bpy.context.object.active_material_index = mat_order[mat_name_list[j]]
-#     if mat_name_list[j] == '1_a':
-#         bpy.context.object.active_material.pass_index = 50
-#     elif mat_name_list[j] == '1_b':
-#         bpy.context.object.active_material.pass_index = 100
-#     elif mat_name_list[j] == '1_c':    
-#         bpy.context.object.active_material.pass_index = 150
-#     elif mat_name_list[j] == '1_d':     
-#         bpy.context.object.active_material.pass_index = 200
-#     else:
-#         print('NO!')
 
 for j in range(len(mat_name_list)):
     bpy.context.object.active_material_index = mat_order[mat_name_list[j]]
     bpy.context.object.active_material.pass_index = 10 * (j + 1)
     
         
-
 # change_nodes.
 bpy.context.scene.use_nodes = True
 tree = bpy.context.scene.node_tree
@@ -108,11 +93,9 @@ links.new(render_layers.outputs['IndexMA'], math_node.inputs[0])
 links.new(math_node.outputs['Value'], output_node_seg.inputs[0])
 
 
-
 # lights
 energy = 0.50
 
-# Make light just directional, disable shadows.
 bpy.ops.object.lamp_add(type='HEMI',location=(0,0,5))
 lamp = bpy.data.lamps['Hemi']
 #lamp.type = 'HEMI'
@@ -178,7 +161,6 @@ else:
 bpy.context.scene.render.resolution_x = 600
 bpy.context.scene.render.resolution_y = 600
 bpy.context.scene.render.resolution_percentage = 100
-#bpy.data.worlds["World"].node_tree.nodes["Background"].inputs[0].default_value = (0, 0, 0, 1)
 bpy.context.scene.world.horizon_color = (0,0,0)
 
 
