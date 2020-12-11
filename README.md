@@ -7,6 +7,22 @@ Supported 3D format: .obj.
 
 Here are some examples.
 
-[RGB](https://github.com/XiangyuSu611/3D-Renderer-for-Mask-Image/blob/main/ADE_val_00000631.jpg)
-[!RGN](https://github.com/XiangyuSu611/3D-Renderer-for-Mask-Image/blob/main/ADE_val_00000631.jpg)
-[!MASK](https://github.com/XiangyuSu611/3D-Renderer-for-Mask-Image/blob/main/ADE_val_00000631.png)
+![RGB](https://github.com/XiangyuSu611/3D-Renderer-for-Mask-Image/blob/main/ADE_val_00000631.jpg)
+![MASK_PART](https://github.com/XiangyuSu611/3D-Renderer-for-Mask-Image/blob/main/ADE_val_00000631.png)
+
+Please notice that the second picture is not original materials desiged in ShapeNet, we use part segmentation produced by [Yi Li et al](https://cs.stanford.edu/~ericyi/project_page/part_annotation/).
+And of course you can use original meterials provided by ShapeNet.
+
+## HOW to use
+
+* First, this script is running on Blender, so please download Blender on Linux first. We recommend to use Blender 2.79.
+* Second, please extract Blender, and then you can run these script.
+### Render single object.
+Run the following command:
+```
+/home/xiangyu/blender-2.79-1/blender --background --python /home/xiangyu/software/segmentation_render/render_mask_2.79.py -- --output_folder /home/xiangyu/software/mat1 {} \;
+```
+### Render many objects.
+```
+find /home/xiangyu/models/obj_change/ -name *.obj -exec /home/xiangyu/blender-2.79-1/blender --background --python /home/xiangyu/software/segmentation_render/render_mask_2.79.py -- --output_folder /home/xiangyu/software/mat1 {} \;
+```
