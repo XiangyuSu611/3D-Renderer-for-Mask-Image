@@ -13,7 +13,7 @@ Here are some examples.
 Please notice that the second picture is not original materials desiged in ShapeNet, we use part segmentation produced by [Yi Li et al](https://cs.stanford.edu/~ericyi/project_page/part_annotation/).
 And of course you can use original meterials provided by ShapeNet.
 
-## HOW to use
+## How to Use
 
 * First, this script is running on Blender, so please download Blender on Linux first. We recommend to use Blender 2.79.
 * Second, please extract Blender, and then you can run these script.
