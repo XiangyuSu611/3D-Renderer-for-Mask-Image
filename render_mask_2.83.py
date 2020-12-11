@@ -2,7 +2,6 @@
 blender render based on materials.
 blender version: 2.83.
 load 3d type: obj.
-for singel objects.
 """
 import bpy
 import numpy as np
@@ -54,20 +53,22 @@ bpy.context.scene.render.engine = 'CYCLES'
 
 
 # give different materials different channels.    
-bpy.context.scene.view_layers["View Layer"].use_pass_material_index = True
+mat_name_list = []
+mat_order = {}
+for i in range(20):
+    try:
+        name = bpy.context.object.material_slots[i].name
+        mat_name_list.append(name)
+        key = name
+        mat_order[key] = i
+    except:
+        print("TOTAL MAT NUMBER IS %d NO MORE MAT!" % i)
+        break
+mat_name_list.sort()
 
-bpy.context.object.active_material_index = 0
-bpy.context.object.active_material.pass_index = 50
-bpy.context.object.active_material_index = 1
-bpy.context.object.active_material.pass_index = 100
-bpy.context.object.active_material_index = 2
-bpy.context.object.active_material.pass_index = 150
-
-try:
-    bpy.context.object.active_material_index = 3
-    bpy.context.object.active_material.pass_index = 200
-except:
-    print("Only 3 materials!")
+for j in range(len(mat_name_list)):
+    bpy.context.object.active_material_index = mat_order[mat_name_list[j]]
+    bpy.context.object.active_material.pass_index = 10 * (j + 1)
 
 
 # change_nodes.
