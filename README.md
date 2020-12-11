@@ -7,5 +7,5 @@ Supported 3D format: .obj.
 
 Here are some examples.
 
-[!image](https://github.com/XiangyuSu611/3D-Renderer-for-Mask-Image/blob/main/ADE_val_00000631.jpg)
-[!image](https://github.com/XiangyuSu611/3D-Renderer-for-Mask-Image/blob/main/ADE_val_00000631.png)
+[!RGB](https://github.com/XiangyuSu611/3D-Renderer-for-Mask-Image/blob/main/ADE_val_00000631.jpg)
+[!MASK](https://github.com/XiangyuSu611/3D-Renderer-for-Mask-Image/blob/main/ADE_val_00000631.png)
