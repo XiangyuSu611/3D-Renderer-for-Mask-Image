@@ -26,3 +26,12 @@ Run the following command:
 ```
 find /home/xiangyu/models/obj_change/ -name *.obj -exec /home/xiangyu/blender-2.79-1/blender --background --python /home/xiangyu/software/segmentation_render/render_mask_2.79.py -- --output_folder /home/xiangyu/software/mat1 {} \;
 ```
+## Some options 
+* views 
+number of views to be rendered.
+* output_folder
+The path the output will be dumped to.
+* cam_mode
+Camera position sampling method, sphere or circle.
+* obj_path
+Path to target obj file.
