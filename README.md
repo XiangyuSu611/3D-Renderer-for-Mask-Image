@@ -28,10 +28,10 @@ find /home/xiangyu/models/obj_change/ -name *.obj -exec /home/xiangyu/blender-2.
 ```
 ## Some options 
 * views 
-number of views to be rendered.
+(Number of views to be rendered.)
 * output_folder
-The path the output will be dumped to.
+(The path the output will be dumped to.)
 * cam_mode
-Camera position sampling method, sphere or circle.
+(Camera position sampling method, sphere or circle.)
 * obj_path
-Path to target obj file.
+(Path to target obj file.)
